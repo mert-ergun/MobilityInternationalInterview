@@ -4,20 +4,34 @@
     ViewData["Title"] = "Add Record";
 }
 
-<h2>Add Record</h2>
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Add Record</h2>
+            <form asp-action="Add" class="mt-4">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Age" class="control-label"></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-<form asp-action="Add">
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Surname"></label>
-        <input asp-for="Surname" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Age"></label>
-        <input asp-for="Age" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

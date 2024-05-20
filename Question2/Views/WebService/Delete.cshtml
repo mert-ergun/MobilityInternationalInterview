@@ -2,12 +2,17 @@
     ViewData["Title"] = "Delete Record";
 }
 
-<h2>Delete Record</h2>
-
-<form asp-action="Delete">
-    <div class="form-group">
-        <label>Name</label>
-        <input name="name" class="form-control" />
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Delete Record</h2>
+            <form asp-action="Delete" class="mt-4">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input name="name" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-danger btn-lg btn-block mt-4">Delete</button>
+            </form>
+        </div>
     </div>
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+</div>
